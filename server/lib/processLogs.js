@@ -3,7 +3,8 @@ const loggingTools = require('auth0-log-extension-tools');
 
 const logger = require('./logger');
 const config = require('./config');
-const sender = require(`./senders/${process.env.A0EXT_PROVIDER}`);
+// console.log(process.env);
+const sender = require(`./senders/azurelogs`);
 
 const MS_PER_S = 1000;
 const NS_PER_MS = 1000000;
