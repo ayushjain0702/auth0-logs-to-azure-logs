@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const tools = require('auth0-extension-tools');
 const expressTools = require('auth0-extension-express-tools');
 
-const routes = require('./routes');
+const routes = require('./routes/index');
 const meta = require('./routes/meta');
 const hooks = require('./routes/hooks');
 const logger = require('./lib/logger');
@@ -45,11 +45,10 @@ module.exports = (configProvider, storageProvider) => {
     rta: config('AUTH0_RTA').replace('https://', ''),
     domain: config('AUTH0_DOMAIN'),
     baseUrl: config('PUBLIC_WT_URL') || config('WT_URL'),
-    clientName: 'Logs to Provider',
+    clientName: 'Logs to Any Provider',
     urlPrefix: '',
     sessionStorageKey: 'logs-to-provider:apiToken'
   }));
-
   app.use('/meta', meta());
   app.use('/.extensions', hooks());
 
