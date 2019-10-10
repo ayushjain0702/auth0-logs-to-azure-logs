@@ -3,7 +3,7 @@
   "type": "cron",
   "category": "log_export",
   "initialUrlPath": "/login",
-  "repository": "https://github.com/auth0-extensions/auth0-logs-to-provider",
+  "repository": "https://github.com/ayushjain0702/auth0-logs-to-azure-logs",
   "keywords": [
     "auth0",
     "extension"
