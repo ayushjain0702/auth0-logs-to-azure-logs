@@ -20,7 +20,6 @@ module.exports = (storage) => {
   app.get('/api/report', authenticateAdmins, (req, res, next) =>
     storage.read()
       .then((data) => {
-        console.log(data);
         const lastRun = data && data.lastRun;
         const allLogs = (data && data.logs) ? _.orderBy(data.logs, 'start', 'desc') : [];
         const logs = (req.query.filter && req.query.filter === 'errors') ? _.filter(allLogs, log => !!log.error) : allLogs;
