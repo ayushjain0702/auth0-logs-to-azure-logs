@@ -1,6 +1,20 @@
-# Auth0 - Logs to Sumo Logic
+# Auth0 - Logs to Azure Log Analytics
 
-## Move Notice
-Beginning with the `2.1` release of this extension, we have moved from separate repositories for each of the logging extensions to building and deploying via a single `auth0-logs-to-provider` monorepo. This approach will make maintenance and issue tracking across all logging extensions much easier for Auth0 and more timely for our customers.
+## This extension is build using auth0-logs-to-provider repo. 
+The monorepo can be found here: [auth0-logs-to-provider](https://github.com/auth0-extensions/auth0-logs-to-provider)
 
-The new monorepo can be found here: [auth0-logs-to-provider](https://github.com/auth0-extensions/auth0-logs-to-provider)
+## How to build the extension
+Clone the Monorepo of auth0. 
+```sh
+git clone https://github.com/auth0-extensions/auth0-logs-to-provider
+```
+Copy the files from src directory to the cloned directory. 
+
+Execute the following commands to get the build.js file. 
+
+```sh
+npm install
+node build.js --p azurelogs
+```
+
+This will create a file in dist/azurelogs directory. Copy the file to build directory in the current project (auth0-logs-to-azure-logs), and rename the file to build.js
